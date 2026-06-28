@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+
+secret_number = 42
+
+while True:
+    try:
+        num = int(input("Enter a number: "))
+        if num == secret_number:
+            print("You guessed it!")
+            break
+        elif num < secret_number:
+            print("Too low")
+        else:
+            print("Too high")
+    except ValueError:
+        print("Invalid input")
