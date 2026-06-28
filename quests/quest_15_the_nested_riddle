@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+choice = input("left or right? ")
+if choice == "left" :
+   action = input("do you want to swim or wait? ")
+   if action == "swim":
+      print("You have found a treasure!")
+   else:
+      print("You lost!")
+else:
+   print("You hit a dead end!")
