@@ -1,0 +1,70 @@
+#!/usr/bin/python3
+
+def choose(prompt, options):
+    # Keep asking until the player picks a valid option number.
+    while True:
+        print(prompt)
+        for number, text in options.items():
+            print(f"  {number}) {text}")
+        answer = input("> ").strip()
+        if answer in options:
+            return answer
+        print("That is not one of the paths before you. Try again.\n")
+
+def the_sky_feast():
+    print("\nA great famine grips the land, and your belly has been empty for days.")
+    print("The birds are invited to a feast in the sky, so you sweet-talk them")
+    print("into lending you one feather each. Dressed in borrowed plumage, you")
+    print("rise into the clouds and land at a table groaning with food.\n")
+
+    choice = choose("The host asks each guest their name. What do you say?", {
+        "1": "Tell them your name is 'All of You', then claim every dish for yourself.",
+        "2": "Give your true name and share the feast fairly with the birds.",
+    })
+
+    if choice == "1":
+        the_long_drop()
+    else:
+        journey_home()
+
+def journey_home():
+    print("\nYou eat only your share and praise the birds for their kindness.")
+    print("Pleased, they keep their feathers in your cloak for the journey down")
+    print("and carry you gently back to the earth.\n")
+    ending_honored_guest()
+
+def the_long_drop():
+    print("\nWhen the host says the food is for 'All of You', you swallow it all")
+    print("and leave the birds nothing but bones. Furious, they snatch back every")
+    print("feather and leave you stranded on the edge of the sky.\n")
+
+    choice = choose("Far below waits the hard ground. What do you do?", {
+        "1": "Humble yourself and beg the birds to forgive your greed.",
+        "2": "Send proud Parrot to tell your wife to lay out soft things for your fall.",
+    })
+
+    if choice == "1":
+        print("\nYou bow low and apologize from the heart. Moved, the birds return")
+        print("a few feathers and ease you down to the earth.\n")
+        ending_honored_guest()
+    else:
+        ending_cracked_shell()
+
+def ending_honored_guest():
+    print("=" * 50)
+    print("ENDING: The Honored Guest")
+    print("You reach home safely, your name spoken with respect for years.")
+    print("=" * 50)
+
+def ending_cracked_shell():
+    print("\nParrot, still angry, tells your wife to lay out hard things instead.")
+    print("You leap, expecting softness, and crash onto hoes and stones.\n")
+    print("=" * 50)
+    print("ENDING: The Cracked Shell")
+    print("Your shell shatters into pieces. A healer glues them back together,")
+    print("and that is why, to this day, the tortoise's shell is cracked.")
+    print("=" * 50)
+
+if __name__ == '__main__':
+    print("THE TORTOISE AND THE FEAST IN THE SKY")
+    the_sky_feast()
